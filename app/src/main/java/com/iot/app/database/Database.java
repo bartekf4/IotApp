@@ -24,15 +24,13 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import javax.json.JsonArray;
-
 public class Database {
     public final static String TAG = "database";
     public URL url;
 
     public Database() {
         try {
-            url = url = new URL("https://3lhicw5dsl.execute-api.eu-central-1.amazonaws.com/default/light");
+            url =  new URL("https://3lhicw5dsl.execute-api.eu-central-1.amazonaws.com/default/light");
         } catch (MalformedURLException ex) {
             ex.printStackTrace();
         }

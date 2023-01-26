@@ -10,10 +10,14 @@ import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.core.AmplifyConfiguration;
 import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.StrictMode;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -28,7 +32,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -56,12 +69,24 @@ public class MainActivity extends AppCompatActivity {
         } catch (AmplifyException error) {
             Log.e("MyAmplifyApp", "Could not initialize Amplify", error);
         }
-        Database database = new Database();
+
+        SecretKey secretKey;
+        String stringKey;
+
+        try {
+            secretKey = KeyGenerator.getInstance("AES").generateKey();
+            if (secretKey != null) {
+                stringKey = Base64.encodeToString(secretKey.getEncoded(), Base64.DEFAULT);
+                Log.d("KEYYYYYY", stringKey);
+            }
+
+        } catch (NoSuchAlgorithmException e) {/* LOG YOUR EXCEPTION */}
+
 
 //        to check if the user is logged in
         Amplify.Auth.fetchAuthSession(
-                result ->{
-                    if(result.isSignedIn()){
+                result -> {
+                    if (result.isSignedIn()) {
                         Intent intent = new Intent(this, DashboardActivity.class);
                         startActivity(intent);
                     }
@@ -69,21 +94,6 @@ public class MainActivity extends AppCompatActivity {
                 error -> Log.e("AmplifyQuickstart", error.toString())
         );
 
-//        RestOptions options = RestOptions.builder()
-//                .addPath("/devices")
-//                .addBody("{\"username\":\"bf420\",\"deviceId\":\"test\"}".getBytes(StandardCharsets.UTF_8))
-//                .build();
-//
-//        Amplify.API.post(options,
-//                response -> Log.i("MyAmplifyApp", "POST succeeded: " + response.getData().asString()),
-//                error -> Log.e("MyAmplifyApp", "POST failed", error));
-
-        RestOptions options1 = RestOptions.builder()
-                        .addPath("/items")
-                                .build();
-        Amplify.API.get(options1,
-                response -> Log.i("MyAmplifyApp", "GET succeeded: " + response.getData().asString()),
-                error -> Log.e("MyAmplifyApp", "GET failed", error));
 
         setSupportActionBar(binding.toolbar);
 
@@ -101,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
 
 //        Intent intent = new Intent(this, ConnectToESP32.class);
 //        MainActivity.this.startActivity(intent);
-
 
 
     }
@@ -135,8 +144,6 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-
 
 
 }
