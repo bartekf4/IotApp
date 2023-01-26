@@ -1,0 +1,70 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-myapplication-dev-20432-authRole",
+      "UnauthRoleArn": "arn:aws:iam::004319199759:role/amplify-myapplication-dev-20432-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::004319199759:role/amplify-myapplication-dev-20432-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-myapplication-dev-20432-deployment",
+      "UnauthRoleName": "amplify-myapplication-dev-20432-unauthRole",
+      "StackName": "amplify-myapplication-dev-20432",
+      "StackId": "arn:aws:cloudformation:eu-central-1:004319199759:stack/amplify-myapplication-dev-20432/661268f0-9d15-11ed-a957-06ed5b4eec60",
+      "AmplifyAppId": "d3d6hf5ixb3jlf"
+    },
+    "categories": {
+      "auth": {
+        "myapplication52824cd9": {
+          "userPoolId": "eu-central-1_zhw75TjiC",
+          "userPoolName": "brighnessAppUserPool",
+          "webClientId": "j4b48fg4542njbiqj5birp41m",
+          "nativeClientId": "j4b48fg4542njbiqj5birp41m",
+          "identityPoolId": "eu-central-1:d9a075f8-2b1a-406e-8a6c-943cd1c14af2",
+          "identityPoolName": "BrightnessApp",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::004319199759:role/Cognito_BrightnessAppAuth_Role",
+          "authRoleName": "Cognito_BrightnessAppAuth_Role",
+          "unauthRoleArn": "arn:aws:iam::004319199759:role/Cognito_BrightnessAppUnauth_Role",
+          "unauthRoleName": "Cognito_BrightnessAppUnauth_Role"
+        }
+      },
+      "storage": {
+        "BrightApp": {
+          "tableName": "BrightApp",
+          "region": "eu-central-1",
+          "arn": "arn:aws:dynamodb:eu-central-1:004319199759:table/BrightApp",
+          "partitionKeyName": "Device ID",
+          "partitionKeyType": "S",
+          "sortKeyName": "timestamp",
+          "sortKeyType": "S"
+        },
+        "UserDevice": {
+          "tableName": "UserDevice",
+          "region": "eu-central-1",
+          "arn": "arn:aws:dynamodb:eu-central-1:004319199759:table/UserDevice",
+          "partitionKeyName": "Username",
+          "partitionKeyType": "S",
+          "sortKeyName": "Device_ID",
+          "sortKeyType": "S"
+        }
+      },
+      "function": {
+        "LightHandler": {
+          "deploymentBucketName": "amplify-myapplication-dev-20432-deployment",
+          "s3Key": "amplify-builds/LightHandler-707068494c61436e332f-build.zip"
+        },
+        "DeviceHandler": {
+          "deploymentBucketName": "amplify-myapplication-dev-20432-deployment",
+          "s3Key": "amplify-builds/DeviceHandler-38386673573876394937-build.zip"
+        },
+        "myapplication514481d7": {
+          "deploymentBucketName": "amplify-myapplication-dev-20432-deployment",
+          "s3Key": "amplify-builds/myapplication514481d7-4978727739783341336a-build.zip"
+        }
+      },
+      "api": {
+        "BrightAppResource": {},
+        "api4b0aa3a3": {}
+      }
+    }
+  }
+}

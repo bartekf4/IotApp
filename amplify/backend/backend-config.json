@@ -1,0 +1,306 @@
+{
+  "api": {
+    "api4b0aa3a3": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "myapplication514481d7"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "myapplication52824cd9": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "function": {
+    "myapplication514481d7": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "BrightApp"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_myapplication52824cd9_allowUnauthenticatedIdentities": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_authRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_authRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_identityPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_identityPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_unauthRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_unauthRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myapplication52824cd9_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myapplication52824cd9"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeviceHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeviceHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_DeviceHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "DeviceHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_LightHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LightHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_LightHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LightHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_myapplication514481d7_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myapplication514481d7"
+        }
+      ]
+    },
+    "AMPLIFY_function_myapplication514481d7_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myapplication514481d7"
+        }
+      ]
+    },
+    "AMPLIFY_storage_BrightApp_arn": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "BrightApp"
+        }
+      ]
+    },
+    "AMPLIFY_storage_BrightApp_partitionKeyName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "BrightApp"
+        }
+      ]
+    },
+    "AMPLIFY_storage_BrightApp_partitionKeyType": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "BrightApp"
+        }
+      ]
+    },
+    "AMPLIFY_storage_BrightApp_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "BrightApp"
+        }
+      ]
+    },
+    "AMPLIFY_storage_BrightApp_sortKeyName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "BrightApp"
+        }
+      ]
+    },
+    "AMPLIFY_storage_BrightApp_sortKeyType": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "BrightApp"
+        }
+      ]
+    },
+    "AMPLIFY_storage_BrightApp_tableName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "BrightApp"
+        }
+      ]
+    },
+    "AMPLIFY_storage_UserDevice_arn": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "UserDevice"
+        }
+      ]
+    },
+    "AMPLIFY_storage_UserDevice_partitionKeyName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "UserDevice"
+        }
+      ]
+    },
+    "AMPLIFY_storage_UserDevice_partitionKeyType": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "UserDevice"
+        }
+      ]
+    },
+    "AMPLIFY_storage_UserDevice_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "UserDevice"
+        }
+      ]
+    },
+    "AMPLIFY_storage_UserDevice_sortKeyName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "UserDevice"
+        }
+      ]
+    },
+    "AMPLIFY_storage_UserDevice_sortKeyType": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "UserDevice"
+        }
+      ]
+    },
+    "AMPLIFY_storage_UserDevice_tableName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "UserDevice"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "BrightApp": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB",
+      "serviceType": "imported"
+    }
+  }
+}
